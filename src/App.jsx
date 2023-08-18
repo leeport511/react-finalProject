@@ -1,5 +1,6 @@
 import Header from "./components/Header/Header";
 import SideNavBar from "./components/SideNavBar/SideNavBar";
+import ItemListContainer from "./components/products/ItemListContainer";
 
 function App() {
     return (
@@ -8,7 +9,7 @@ function App() {
                 <SideNavBar />
                 <div className="w-screen">
                     <Header />
-                    {/* main */}
+                    <ItemListContainer grettings={'Bienvenido al contenedor de productos'}/>
 
                 </div>
             </div>
