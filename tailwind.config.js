@@ -8,6 +8,7 @@ export default {
                 "orange": "#e57c23",
                 "ligthOrange": "#E8AA42",
                 "whiteOrange": "#F8F1F1",
+                "ligthOrangeOpacity": "#E8AA4240"
             },
 
             fontFamily: {

@@ -17,8 +17,8 @@ const ItemListContainer = ({ grettings }) => {
   
 
     return (
-        <div className="sc">
-            <h1>{grettings}</h1>
+        <div className="scroll-smooth overflow-auto h-[89vh]">
+            <h1 className="text-center my-8 font-hindMadurai font-medium tracking-widest text-greenBlue text-3xl capitalize">{grettings}</h1>
             <ItemList products={products}/>
         </div>
     );

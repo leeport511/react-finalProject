@@ -7,9 +7,11 @@ function App() {
         <>
             <div className="flex bg-whiteOrange">
                 <SideNavBar />
-                <div className="w-screen">
-                    <Header />
-                    <ItemListContainer grettings={'Bienvenido al contenedor de productos'}/>
+                <div className="w-screen relative backgroundSVG">
+                    
+                    <Header/>
+                    
+                    <ItemListContainer grettings={'Contenedor de productos'}/>
 
                 </div>
             </div>
