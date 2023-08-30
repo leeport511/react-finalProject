@@ -219,5 +219,18 @@ export const getProducts = () => {
             resolve(products)
         }, 1000);
     })
+
 }
 
+export const getItem = (itemId) => {
+    return new Promise ((resolve, reject) => {
+        setTimeout(() => {
+            let item = products.find(product => product.id === itemId)
+
+            item ?
+            resolve(item)
+            :
+            reject(new Error(`Cound't find ${itemId}`))
+        },1500)
+    })
+}

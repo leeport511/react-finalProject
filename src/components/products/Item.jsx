@@ -1,6 +1,10 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-const Item = ({ name, image, brand, model, version, price }) => {
+const Item = ({ id, name, image}) => {
+
+    // const navigate = useNavigate()
+
     return (
         <div className="border-2 border-orange rounded-3xl py-4 px-6 flex flex-col w-[350px] justify-between">
             <div>
@@ -12,26 +16,14 @@ const Item = ({ name, image, brand, model, version, price }) => {
                     />
                 </div>
                 <div className="mt-4 text-greenBlue font-hindMadurai">
-                    <h3 className="font-medium text-2xl mb-5">{name}</h3>
-                    <p className="mb-1">
-                        <strong>Brand:</strong> {brand}
-                    </p>
-                    <p className="mb-1">
-                        <strong>Model: </strong>
-                        {model}
-                    </p>
-                    <p className="mb-1">
-                        <strong>Version: </strong>
-                        {version}
-                    </p>
+                    <h3 className="font-medium text-2xl mb-5 text-center">{name}</h3>
                 </div>
-                <div className="mt-6">
-                    <h4 className="text-3xl text-greenBlue font-semibold mb-3">
-                        ${price}
-                    </h4>
-                </div>
+                
             </div>
-            <button className="border border-orange rounded-[8px] uppercase text-greenBlue font-medium py-1 hover:bg-ligthOrangeOpacity">Add to Cart</button>
+            <Link to={`/detail/${id}`} className="border border-orange rounded-[8px] uppercase text-greenBlue font-medium py-1 hover:bg-ligthOrangeOpacity">
+                Get More details
+            </Link>
+            {/* <button onClick={() => navigate('/detail')}></button> */}
         </div>
     );
 };
