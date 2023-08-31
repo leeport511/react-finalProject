@@ -13,7 +13,7 @@ export const menuItems = [
     },
 ]
 
-export const productsItems = [
+export const ProductsByCategory = [
     {
         id: '1',
         name: 'Keyboards',

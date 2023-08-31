@@ -2,6 +2,8 @@ import React from 'react'
 import Item from './Item'
 
 const ItemList = ({products}) => {
+
+  
   return (
     <div className="flex flex-wrap gap-7 justify-center">
       {

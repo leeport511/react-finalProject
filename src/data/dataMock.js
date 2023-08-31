@@ -231,6 +231,21 @@ export const getItem = (itemId) => {
             resolve(item)
             :
             reject(new Error(`Cound't find ${itemId}`))
-        },1500)
+        },500)
+    })
+}
+
+
+export const getProductsByCategory = (categoryId) => {
+    return new Promise ((resolve, reject) => {
+        setTimeout(() => {
+            let itemsByCategory = products.filter(product => product.category === categoryId)
+
+
+            itemsByCategory ?
+            resolve(itemsByCategory)
+            :
+            reject(new Error(`Cound't find ${categoryId}`))
+        },500)
     })
 }
