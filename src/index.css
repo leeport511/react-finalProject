@@ -10,5 +10,5 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 7000px 2000px;
-    
+    z-index: 1;
 }
