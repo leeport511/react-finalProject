@@ -6,7 +6,7 @@ import CategoryNavList from "./CategoryNavList";
 
 const SideNavBar = () => {
 
-    const [displayCategories, setDisplayCategories] = useState(true)
+    const [displayCategories, setDisplayCategories] = useState(false)
     const navigate = useNavigate();
 
 
