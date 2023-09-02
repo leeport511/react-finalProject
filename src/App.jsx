@@ -18,7 +18,7 @@ function App() {
         <BrowserRouter>
             <div className="flex ">
                 <SideNavBar />
-                <div className="w-screen relative backgroundSVG">
+                <div className="w-screen relative bg-whiteOrange backgroundSVG">
                     
                     <Header/>
                     <Routes>

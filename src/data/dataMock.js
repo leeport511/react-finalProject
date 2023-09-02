@@ -217,7 +217,7 @@ export const getProducts = () => {
     return new Promise (resolve => {
         setTimeout(() => {
             resolve(products)
-        }, 1000);
+        }, 2000);
     })
 
 }
@@ -231,7 +231,7 @@ export const getItem = (itemId) => {
             resolve(item)
             :
             reject(new Error(`Cound't find ${itemId}`))
-        },500)
+        },1500)
     })
 }
 
@@ -246,6 +246,6 @@ export const getProductsByCategory = (categoryId) => {
             resolve(itemsByCategory)
             :
             reject(new Error(`Cound't find ${categoryId}`))
-        },500)
+        },1500)
     })
 }

@@ -4,7 +4,7 @@ import CartWidget from "./CartWidget";
 const Header = () => {
     return (
         <>
-            <section className="flex flex-row justify-between px-10 py-5">
+            <section className="flex flex-row justify-between items-center px-10 py-1">
                 <h1 className="uppercase font-montserrat text-6xl font-bold tracking-[3px] text-greenBlue">
                     fake e store
                 </h1>

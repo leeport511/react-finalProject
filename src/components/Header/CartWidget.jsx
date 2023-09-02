@@ -3,8 +3,8 @@ import { Badge } from "@nextui-org/badge";
 
 const CartWidget = () => {
     return (
-        <button className='relative'>
-            <Badge content='5' className=" absolute translate-y-10 -translate-x-1 bg-orange rounded-full w-6 flex justify-center border border-greenBlue text-whiteOrange font-medium" />
+        <button className='relative mb-4'>
+            <Badge content='5' size='lg' className=" absolute translate-y-11 -translate-x-3 bg-orange border border-greenBlue text-whiteOrange font-medium" />
                 <img
                     src="../../assets/images/carritoCompra.png"
                     alt="Green Shooping Cart"
