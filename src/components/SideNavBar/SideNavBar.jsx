@@ -30,8 +30,8 @@ const SideNavBar = () => {
                 </h2>
             </div>
             <div className="flex flex-col gap-y-2">
-                <div className="flex flex-col gap-y-6 px-2">
-                    <div className="flex hover:bg-ligthOrangeOpacity hover:rounded-xl">
+                <div className="flex flex-col gap-y-6 px-2 ">
+                    <div className="flex hover:bg-ligthOrangeOpacity hover:rounded-xl ">
                         <NavLink
                             to={`/products`}
                             className="font-hindMadurai font-semibold text-xl tracking-widest p-2 "
@@ -41,9 +41,9 @@ const SideNavBar = () => {
                         {
                             displayCategories 
                             ?
-                            <img className="w-6 rotate-180 cursor-pointer" onClick={toogleDisplay} src="../../assets/images/Arrow-up.svg" alt="Arrow Up" />
+                            <img className="w-6 rotate-180 cursor-pointer  duration-250 ease-in-out" onClick={toogleDisplay} src="../../assets/images/Arrow-up.svg" alt="Arrow Up" />
                             :
-                            <img className="w-6 cursor-pointer" onClick={toogleDisplay} src="../../assets/images/Arrow-up.svg" alt="Arrow Up" />
+                            <img className="w-6 cursor-pointer  duration-250  ease-in-out" onClick={toogleDisplay} src="../../assets/images/Arrow-up.svg" alt="Arrow Up" />
                         }
                     </div>
                         {

@@ -20,7 +20,7 @@ const Item = ({ id, name, image}) => {
                 </div>
                 
             </div>
-            <Link to={`/detail/${id}`} className="border border-orange rounded-[8px] uppercase text-greenBlue font-medium py-1 hover:bg-ligthOrangeOpacity">
+            <Link to={`/detail/${id}`} className="border border-orange rounded-[8px] uppercase text-greenBlue text-center font-medium py-1 hover:bg-ligthOrangeOpacity">
                 Get More details
             </Link>
             {/* <button onClick={() => navigate('/detail')}></button> */}
