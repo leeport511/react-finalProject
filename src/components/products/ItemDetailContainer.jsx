@@ -21,7 +21,7 @@ const ItemDetailContainer = () => {
             });
     }, []);
 
-    console.log(item);
+ 
 
     return (
         <div className="flex flex-col">

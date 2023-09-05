@@ -6,9 +6,9 @@
 
 
 .backgroundSVG {
-    background-image: url(./assets/images/backgroud.svg);
+    background-image: url(../assets/images/backgroud.svg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 7000px 2000px;
+    background-size: 2500px 1000px;
     z-index: 1;
 }

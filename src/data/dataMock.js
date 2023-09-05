@@ -8,6 +8,7 @@ const products = [
         version: "rev 1.0",
         price: 210575,
         image: "Mother-gigabyte-b560m.webp",
+        stock: 5,
     },
 
     {
@@ -18,6 +19,7 @@ const products = [
         model: "H410m-b",
         price: 94990,
         image: "Mother-msi-h410.webp",
+        stock: 3,
     },
     {
         id: "3",
@@ -28,6 +30,7 @@ const products = [
         version: "Gamer",
         price: 62398,
         image: "Gabinete-pc-500r.webp",
+        stock: 0,
     },
     {
         id: "4",
@@ -38,6 +41,7 @@ const products = [
         version: "Gamer",
         price: 73080,
         image: "Gabinete-deepcool.webp",
+        stock: 2,
     },
     {
         id: "5",
@@ -48,6 +52,7 @@ const products = [
         version: "Gamer",
         price: 49763,
         image: "Auris-razen-kraken.webp",
+        stock: 6,
     },
     {
         id: "6",
@@ -58,6 +63,7 @@ const products = [
         version: "G635",
         price: 107000,
         image: "Auris-logitech-g635.webp",
+        stock: 5,
     },
     {
         id: "7",
@@ -68,6 +74,7 @@ const products = [
         version: "Origins 60",
         price: 92000,
         image: "HyperX Alloy RGB.webp",
+        stock: 5,
     },
     {
         id: "8",
@@ -78,6 +85,7 @@ const products = [
         version: "K835",
         price: 49568,
         image: "Logitech K835.webp",
+        stock: 5,
     },
     {
         id: "9",
@@ -88,6 +96,7 @@ const products = [
         version: "K530",
         price: 46655,
         image: "Redragon Draconic K530.webp",
+        stock: 2,
     },
     {
         id: "10",
@@ -98,6 +107,7 @@ const products = [
         version: "K552",
         price: 34999,
         image: "Redragon Kumara K552 QWERTY.webp",
+        stock: 0,
     },
     {
         id: "11",
@@ -108,6 +118,7 @@ const products = [
         version: "5600G",
         price: 172912,
         image: "AMD Ryzen 5600G.webp",
+        stock: 2,
     },
     {
         id: "12",
@@ -118,6 +129,7 @@ const products = [
         version: "10100F",
         price: 62788,
         image: "Intel Core I3-10100F.webp",
+        stock: 3,
     },
     {
         id: "13",
@@ -128,6 +140,7 @@ const products = [
         version: "10700B",
         price: 299850,
         image: "Intel Core I7-10700.webp",
+        stock: 4,
     },
     {
         id: "14",
@@ -138,6 +151,7 @@ const products = [
         version: "VA24EHE",
         price: 114999,
         image: "Asus VA24E.webp",
+        stock: 0,
     },
     {
         id: "15",
@@ -148,6 +162,7 @@ const products = [
         version: "led 27 white",
         price: 278855,
         image: "LG 27UL500.webp",
+        stock: 1,
     },
     {
         id: "16",
@@ -158,6 +173,7 @@ const products = [
         version: "led 24 blue",
         price: 106828,
         image: "Samsung F24T35 led-24.webp",
+        stock: 5,
     },
     {
         id: "17",
@@ -168,6 +184,7 @@ const products = [
         version: "S32AG55 LCD 32",
         price: 396700,
         image: "Samsung Odyssey G5 S32AG55.webp",
+        stock: 2,
     },
     {
         id: "18",
@@ -178,6 +195,7 @@ const products = [
         version: "G203 blue",
         price: 23500,
         image: "Logitech G203 Lightsync.webp",
+        stock: 0,
     },
     {
         id: "19",
@@ -188,6 +206,7 @@ const products = [
         version: "G502 black",
         price: 38990,
         image: "Logitech g502.webp",
+        stock: 1,
     },
     {
         id: "20",
@@ -198,6 +217,7 @@ const products = [
         version: "Mini black",
         price: 60000,
         image: "Razer Viper Mini.webp",
+        stock: 2,
     },
     {
         id: "21",
@@ -208,6 +228,7 @@ const products = [
         version: "M808-KS white",
         price: 32473,
         image: "Redragon m808-ks.webp",
+        stock: 3,
     },
 ];
 

@@ -8,13 +8,15 @@ export const useCounter = (initialValue) => {
         minusClick: false,
     });
 
-    const incrementCounter = () => {
+    const incrementCounter = (stock) => {
 
-        setCounter(counter + 1 );
-        setButtonState({...buttonState, plusClick: true});
-        setTimeout(() => {
-            setButtonState({...buttonState, plusClick: false})
-        },100);
+        if(stock > counter) {
+            setCounter(counter + 1 );
+            setButtonState({...buttonState, plusClick: true});
+            setTimeout(() => {
+                setButtonState({...buttonState, plusClick: false})
+            },100);
+        }
     }
 
     const decrementCounter = () => {
