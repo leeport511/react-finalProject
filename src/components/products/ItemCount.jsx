@@ -2,7 +2,7 @@ import React from "react";
 import { useCounter } from "../../hooks/useCounter";
 
 const ItemCount = ({ stock, onAdd }) => {
-    const { counter, buttonState, incrementCounter, decrementCounter } =
+    const { counter:quantity, buttonState, incrementCounter, decrementCounter } =
         useCounter(1);
 
 
@@ -18,7 +18,7 @@ const ItemCount = ({ stock, onAdd }) => {
                 >
                     <img src="../../assets/images/menos.svg" alt="resta" />
                 </button>
-                <h5 className="text-4xl text-center  mx-16">{counter}</h5>
+                <h5 className="text-4xl text-center  mx-16">{quantity}</h5>
                 <button
                     onClick={() => incrementCounter(stock)}
                     className={`w-9 ${
@@ -31,7 +31,7 @@ const ItemCount = ({ stock, onAdd }) => {
             <div>
                 <button
                     disabled={stock === 0}
-                    onClick={() => onAdd(counter)}
+                    onClick={() => onAdd(quantity)}
                     className={`border border-orange rounded-[8px] w-[100%] uppercase text-greenBlue font-medium py-1 ${
                         stock === 0
                             ? "cursor-not-allowed bg-gray-300"

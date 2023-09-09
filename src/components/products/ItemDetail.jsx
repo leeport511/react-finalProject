@@ -2,19 +2,28 @@ import React, { useState } from "react";
 import ItemCount from "./ItemCount";
 import { Divider } from "@nextui-org/react";
 import { Link } from "react-router-dom";
+import { useCart } from "../../hooks/useCart";
 
-const ItemDetail = ({ name, brand, model, version, price, image, stock }) => {
+const ItemDetail = ({id, name, brand, model, version, price, image, stock }) => {
 
     const [newStock, setNewStock] = useState(stock);
     const [itemAdded, setItemAdded] = useState(false);
+    const {cart, addToCart} = useCart();
 
-    const onAdd = (counter) => {
+    const onAdd = (quantity) => {
 
-        setNewStock(newStock - counter)
+        setNewStock(newStock - quantity)
         setItemAdded(!itemAdded)
         
-    }    
+        const itemToAdd = {id, name, price, quantity, image }
 
+        addToCart(itemToAdd)
+
+        
+    }    
+    
+    console.log(cart);
+    
     // TODO : hay que mantener el stock actualizado (uso localStorage? o mejor espero a FireBase? :) )
 
 
