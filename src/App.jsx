@@ -1,5 +1,4 @@
 import About from "./components/About Us/About";
-import Cart from "./components/Cart/Cart";
 import ContactUs from "./components/Contact Us/ContactUs";
 import Header from "./components/Header/Header";
 import SideNavBar from "./components/SideNavBar/SideNavBar";
@@ -8,6 +7,7 @@ import ItemDetailContainer from "./components/products/ItemDetailContainer";
 import ItemListContainer from "./components/products/ItemListContainer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CartContextProvider from "./context/CartContext";
+import CartContainer from "./components/Cart/CartContainer";
 
 
 
@@ -32,7 +32,7 @@ function App() {
                             <Route path="/item/:id" element={<ItemDetailContainer />}/>
                             <Route path='/About Us' element={<About />}/>
                             <Route path='/Contact Us' element={<ContactUs />}/>
-                            <Route path='/cart' element={<Cart />}/>
+                            <Route path='/cart' element={<CartContainer />}/>
                         </Routes>
 
                     </div>

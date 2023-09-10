@@ -3,6 +3,7 @@ import ItemList from "./ItemList";
 import { getProducts, getProductsByCategory } from "../../data/dataMock";
 import { useParams } from "react-router-dom";
 import Loader from "../loader/Loader";
+import IconByCategory from "./IconByCategory";
 
 const ItemListContainer = ({ grettings }) => {
     const [products, setProducts] = useState([]);
@@ -29,9 +30,13 @@ const ItemListContainer = ({ grettings }) => {
             {loading && <Loader />}
             {loading ? null : (
                 <div>
-                    <h1 className="text-center my-8 font-hindMadurai font-bold tracking-widest text-greenBlue text-3xl uppercase">
-                        {category ? category : grettings}
-                    </h1>
+                    <div className="flex justify-center items-center gap-x-6 my-2">
+                        <IconByCategory category={category} />
+                        <h1 className="text-center my-8 font-hindMadurai font-bold tracking-widest text-greenBlue text-3xl uppercase">
+                            {category ? category : grettings}
+                        </h1>
+                        <IconByCategory category={category} />
+                    </div>
                     <ItemList products={products} />
                 </div>
             )}

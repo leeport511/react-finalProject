@@ -1,0 +1,49 @@
+import React from "react";
+import { useCart } from "../../hooks/useCart";
+import { CartItem } from "./CartItem";
+import { Button } from "@nextui-org/react";
+import CartEmpty from "./CartEmpty";
+
+const CartContainer = () => {
+    const { cart, removeCartList, totalPrice } = useCart();
+
+
+    return (
+      <>
+      {
+        (cart.length !== 0) 
+          ?
+          <section className="flex flex-col backgroundSVG-home home-height ">
+            <div className="flex justify-center items-center gap-x-6">
+              <h3 className="text-center uppercase tracking-widest text-4xl text-greenBlue font-bold my-8">
+                  Shopping Cart
+              </h3>
+              <div className="w-16">
+                 <img src="../../assets/images/carritoCompra.png" alt="Shopping Cart" className="" />
+              </div>
+            </div>
+              <div>
+                  {cart.map((cartItem) => {
+                      return <CartItem key={cartItem.id} {...cartItem} />;
+                  })}
+              </div>
+              <div className="flex justify-between mx-28 mt-8">
+                  <Button
+                      variant="flat"
+                      className="bg-ligthOrangeOpacity font-hindMadurai font-medium tracking-wider text-greenBlue text-md"
+                      onClick={removeCartList}
+                  >
+                      Clean Shopping Cart
+                  </Button>
+                  <p className="uppercase font-hindMadurai font-medium text-2xl text-greenBlue tracking-wider">
+                      to pay: <span className="text-3xl">${totalPrice}</span>
+                  </p>
+              </div>
+          </section>
+        : <CartEmpty />
+      }
+      </>
+    );
+};
+
+export default CartContainer;

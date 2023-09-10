@@ -34,7 +34,13 @@ const SideNavBar = () => {
                     <div className="flex hover:bg-ligthOrangeOpacity hover:rounded-xl ">
                         <NavLink
                             to={`/products`}
-                            className="font-hindMadurai font-semibold text-xl tracking-widest p-2 "
+                            className={`font-hindMadurai font-semibold text-xl tracking-widest p-2`}
+                            style={({isActive}) => { 
+                                return {
+                                    color: isActive ? '#F8F1F1' : '',
+                                    fontStyle: isActive ? 'italic' : '',
+                                }
+                            }}
                         >
                             Products
                         </NavLink>
@@ -53,12 +59,24 @@ const SideNavBar = () => {
                     <NavLink
                         to={`/About Us`}
                         className="font-hindMadurai font-semibold text-xl tracking-widest hover:bg-ligthOrangeOpacity p-2 hover:rounded-xl"
+                        style={({isActive}) => { 
+                            return {
+                                color: isActive ? '#F8F1F1' : '',
+                                fontStyle: isActive ? 'italic' : '',
+                            }
+                        }}
                     >
                         About Us
                     </NavLink>
                     <NavLink
                         to={`/Contact Us`}
                         className="font-hindMadurai font-semibold text-xl tracking-widest hover:bg-ligthOrangeOpacity p-2 hover:rounded-xl"
+                        style={({isActive}) => { 
+                            return {
+                                color: isActive ? '#F8F1F1' : '',
+                                fontStyle: isActive ? 'italic' : '',
+                            }
+                        }}
                     >
                         Contact Us
                     </NavLink>
