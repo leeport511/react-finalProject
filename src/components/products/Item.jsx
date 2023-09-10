@@ -11,7 +11,7 @@ const Item = ({ id, name, image }) => {
                     <img
                         src={`../../assets/images/products-images/${image}`}
                         alt={name}
-                        className="rounded-2xl w-[100%] h-[100%] object-contain"
+                        className="rounded-2xl w-[100%] h-[100%] object-contain mix-blend-multiply"
                     />
                 </div>
                 <div className="mt-4 text-greenBlue font-hindMadurai">

@@ -34,7 +34,7 @@ const ItemDetail = ({id, name, brand, model, version, price, image, stock }) => 
                     <img
                         src={`../../assets/images/products-images/${image}`}
                         alt={name}
-                        className="rounded-3xl w-[100%] h-[100%] object-contain p-2"
+                        className="rounded-3xl w-[100%] h-[100%] object-contain p-2 mix-blend-multiply"
                     />
                     <Divider className="my-2" />
                 </div>
