@@ -31,11 +31,11 @@ const ItemListContainer = ({ grettings }) => {
             {loading ? null : (
                 <div>
                     <div className="flex justify-center items-center gap-x-6 my-2">
-                        <IconByCategory category={category} />
+                       {category && <IconByCategory category={category} />} 
                         <h1 className="text-center my-8 font-hindMadurai font-bold tracking-widest text-greenBlue text-3xl uppercase">
                             {category ? category : grettings}
                         </h1>
-                        <IconByCategory category={category} />
+                        {category && <IconByCategory category={category} />} 
                     </div>
                     <ItemList products={products} />
                 </div>
