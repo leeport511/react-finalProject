@@ -14,7 +14,7 @@ export const CartItem = ({id ,image, name, price, quantity }) => {
                 <img
                     src={`../../assets/images/products-images/${image}`}
                     alt={name}
-                    className="w-32 h-28 object-contain border rounded-2xl border-greenBlue p-1"
+                    className="w-32 h-28 object-contain border rounded-2xl border-greenBlue p-1 mix-blend-multiply"
                 />
                 <div className="text-xl flex flex-col gap-y-3 w-64">
                     <h4>{name}</h4>

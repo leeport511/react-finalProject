@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
+/* overall Styles */
 
 .backgroundSVG {
     background-image: url(../assets/images/backgroud.svg);
@@ -22,5 +21,61 @@
 }
 
 .home-height {
-    height: calc(100vh - 120px)
+    height: calc(100vh - 120px);
+}
+
+/* Toastify React Style */
+
+.Toastify__toast-theme--colored.Toastify__toast--success {
+    background-color: #025464;
+    color: #f8f1f1;
+    outline: 1px solid #f8f1f1;
+    font-family: "Hind Madurai", "sans-serif";
+    text-transform: uppercase;
+    font-weight: semibold;
+    letter-spacing: 2px;
+}
+
+.Toastify__toast-container {
+    width: 350px;
+}
+
+/* SweetAlert2 Style */
+
+.swal2-title {
+    text-transform: uppercase;
+    font-family: "Hind Madurai", "sans-serif";
+    letter-spacing: 1px;
+}
+
+.swal2-container {
+    width: 375px !important ;
+}
+
+.swal2-html-container {
+    text-transform: capitalize;
+    font-family: "Hind Madurai", "sans-serif";
+    letter-spacing: 0.1px;
+}
+
+.swal2-popup {
+    background: #f8f1f1 !important;
+    border: 1px solid #e57c23;
+}
+
+.swal2-confirm {
+    background-color: #025464 !important;
+    color: #f8f1f1 !important;
+    font-weight: bold;
+    border: none;
+    outline: 2px solid #f8f1f1 !important;
+    border-radius: 5px;
+    width: 100px;
+    padding: 8px;
+    margin-bottom: 2.5em;
+    cursor: pointer;
+
+    &:active {
+        background-color: #e8aa4240;
+    }
 }

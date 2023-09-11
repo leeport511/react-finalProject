@@ -33,6 +33,7 @@ function App() {
                             <Route path='/About Us' element={<About />}/>
                             <Route path='/Contact Us' element={<ContactUs />}/>
                             <Route path='/cart' element={<CartContainer />}/>
+                            
                         </Routes>
 
                     </div>

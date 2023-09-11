@@ -3,29 +3,35 @@ import ItemCount from "./ItemCount";
 import { Divider } from "@nextui-org/react";
 import { Link } from "react-router-dom";
 import { useCart } from "../../hooks/useCart";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-const ItemDetail = ({id, name, brand, model, version, price, image, stock }) => {
-
+const ItemDetail = ({
+    id,
+    name,
+    brand,
+    model,
+    version,
+    price,
+    image,
+    stock,
+}) => {
     const [newStock, setNewStock] = useState(stock);
     const [itemAdded, setItemAdded] = useState(false);
-    const {cart, addToCart} = useCart();
+    const { cart, addToCart } = useCart();
 
     const onAdd = (quantity) => {
+        setNewStock(newStock - quantity);
+        setItemAdded(!itemAdded);
 
-        setNewStock(newStock - quantity)
-        setItemAdded(!itemAdded)
-        
-        const itemToAdd = {id, name, price, quantity, image }
+        const itemToAdd = { id, name, price, quantity, image };
 
-        addToCart(itemToAdd)
+        addToCart(itemToAdd);
+    };
 
-        
-    }    
-    
     console.log(cart);
-    
-    // TODO : hay que mantener el stock actualizado (uso localStorage? o mejor espero a FireBase? :) )
 
+    // TODO : hay que mantener el stock actualizado (uso localStorage? o mejor espero a FireBase? :) )
 
     return (
         <div className="backgroundSVG flex flex-col w-[450px] px-4 py-6 rounded-2xl justify-center items-center border-2 border-ligthOrange bg-[url(../../assets/images/backgroud.svg)]">
@@ -59,19 +65,35 @@ const ItemDetail = ({id, name, brand, model, version, price, image, stock }) => 
                         {newStock}
                     </p>
                 </div>
+
                 <div className="mt-6">
                     <h4 className="text-4xl text-greenBlue font-semibold mb-5">
                         ${price}
                     </h4>
                 </div>
-                {
-                    !itemAdded
-                    ? <ItemCount  stock={newStock} onAdd={onAdd}/>
-                    :<div className="flex">
-                        <Link to={`/cart`} className="border border-orange rounded-[8px] w-full uppercase text-greenBlue text-center font-medium py-1 hover:bg-ligthOrangeOpacity">Finalizar Compra</Link>
-                    </div> 
-
-                }
+                {!itemAdded ? (
+                    <ItemCount stock={newStock} onAdd={onAdd} />
+                ) : (
+                    <div className="flex">
+                        <Link
+                            to={`/cart`}
+                            className="border border-orange rounded-[8px] w-full uppercase text-greenBlue text-center font-medium py-1 hover:bg-ligthOrangeOpacity"
+                        >
+                            Finalizar Compra
+                        </Link>
+                    </div>
+                )}
+                <ToastContainer
+                    position="bottom-right"
+                    autoClose={2500}
+                    hideProgressBar
+                    newestOnTop={false}
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="colored"
+                />
             </div>
         </div>
     );
