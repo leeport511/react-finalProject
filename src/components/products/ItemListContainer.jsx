@@ -4,6 +4,10 @@ import { getProducts, getProductsByCategory } from "../../data/dataMock";
 import { useParams } from "react-router-dom";
 import Loader from "../loader/Loader";
 import IconByCategory from "./IconByCategory";
+import { db } from "../../services/firebase/firebaseConfig";
+import { collection, getDocs, query, where } from "firebase/firestore";
+
+
 
 const ItemListContainer = ({ grettings }) => {
     const [products, setProducts] = useState([]);
@@ -14,15 +18,29 @@ const ItemListContainer = ({ grettings }) => {
     useEffect(() => {
         setLoading(true);
 
-        const asyncProducts = category ? getProductsByCategory : getProducts;
+        const productsRef = !category ? collection(db, "products") : query(collection(db, "products"), where('category', '==', category))
+        
+        getDocs(productsRef).then(( querySnapshot ) =>  {
 
-        asyncProducts(category)
-            .then((products) => {
-                setProducts(products);
-            })
-            .finally(() => {
-                setLoading(false);
-            });
+            setProducts(querySnapshot.docs.map((doc) => ({id: doc.id, ...doc.data()})))
+        
+        }).catch(( error ) => {
+            console.error(error)
+        }).finally(() => {
+                    setLoading(false);
+                });
+
+       
+
+        // const asyncProducts = category ? getProductsByCategory : getProducts;
+
+        // asyncProducts(category)
+        //     .then((products) => {
+        //         setProducts(products);
+        //     })
+        //     .finally(() => {
+        //         setLoading(false);
+        //     });
     }, [category]);
 
     return (

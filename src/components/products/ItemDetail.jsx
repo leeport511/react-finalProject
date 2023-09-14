@@ -29,7 +29,7 @@ const ItemDetail = ({
         addToCart(itemToAdd);
     };
 
-    console.log(cart);
+   
 
     // TODO : hay que mantener el stock actualizado (uso localStorage? o mejor espero a FireBase? :) )
 

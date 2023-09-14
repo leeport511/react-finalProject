@@ -35,7 +35,6 @@ const CartContextProvider = ({ children }) => {
                     htmlContainer: 'swal2-html-container',
                 }
               })
-            console.error("Item already in shopping Cart");
         }
     };
 
