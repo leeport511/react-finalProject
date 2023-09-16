@@ -51,8 +51,8 @@ const CartContainer = () => {
                         </p>
                     </div>
                     <div className="flex justify-center mt-20">
-                    <Button className="">
-                        <Link to={'/checkout'}>Pre-order</Link>
+                    <Button variant='bordered' className="font-hindMadurai uppercase text-lg border-orange text-greenBlue font-semibold tracking-wide">
+                        <Link to={'/checkout'} >Pre order</Link>
                     </Button>
                     </div>
                 </section>
