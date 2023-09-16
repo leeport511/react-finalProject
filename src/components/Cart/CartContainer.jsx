@@ -3,6 +3,7 @@ import { useCart } from "../../hooks/useCart";
 import { CartItem } from "./CartItem";
 import { Button } from "@nextui-org/react";
 import CartEmpty from "./CartEmpty";
+import { Link } from "react-router-dom";
 
 const CartContainer = () => {
     const { cart, removeCartList, totalPrice } = useCart();
@@ -48,6 +49,11 @@ const CartContainer = () => {
                                 }
                             </span>
                         </p>
+                    </div>
+                    <div className="flex justify-center mt-20">
+                    <Button className="">
+                        <Link to={'/checkout'}>Pre-order</Link>
+                    </Button>
                     </div>
                 </section>
             ) : (
