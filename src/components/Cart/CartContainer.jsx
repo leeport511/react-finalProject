@@ -51,7 +51,7 @@ const CartContainer = () => {
                         </p>
                     </div>
                     <div className="flex justify-center mt-20">
-                    <Button variant='bordered' className="font-hindMadurai uppercase text-lg border-orange text-greenBlue font-semibold tracking-wide">
+                    <Button variant='bordered' className="font-hindMadurai uppercase text-lg border-orange text-greenBlue font-semibold tracking-wide hover:bg-ligthOrangeOpacity">
                         <Link to={'/checkout'} >Pre order</Link>
                     </Button>
                     </div>
