@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 const CartContainer = () => {
     const { cart, removeCartList, totalPrice } = useCart();
 
+    console.log(cart);
+
     return (
         <>
             {cart.length !== 0 ? (

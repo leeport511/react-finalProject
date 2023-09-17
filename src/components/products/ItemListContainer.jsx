@@ -50,7 +50,7 @@ const ItemListContainer = ({ grettings }) => {
                 <div>
                     <div className="flex justify-center items-center gap-x-6 my-2">
                        {category && <IconByCategory category={category} />} 
-                        <h1 className="text-center my-8 font-hindMadurai font-bold tracking-widest text-greenBlue text-3xl uppercase">
+                        <h1 className="text-center my-12 font-montserrat font-bold tracking-wider text-greenBlue text-3xl uppercase">
                             {category ? category : grettings}
                         </h1>
                         {category && <IconByCategory category={category} />} 
