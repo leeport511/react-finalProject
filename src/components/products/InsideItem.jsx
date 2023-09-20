@@ -2,6 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const InsideItem = ({name, price, id, image}) => {
+
+    const handleClick = (e) => {
+        e.stopPropagation();
+    }
+
     return (
         <div className="border-2 border-orange rounded-3xl py-4 px-6 flex flex-col w-[350px] justify-between backgroundSVG">
             <div>
@@ -22,6 +27,7 @@ const InsideItem = ({name, price, id, image}) => {
                 </div>
             </div>
             <Link
+                onClick={handleClick}
                 to={`/item/${id}`}
                 className="border border-orange rounded-[8px] uppercase text-greenBlue text-center font-medium py-1 hover:bg-ligthOrangeOpacity"
             >
