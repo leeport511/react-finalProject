@@ -1,12 +1,9 @@
-# FAKE E STORE
-
-* proyecto final para CoderHouse
-
-Link a pagina: **https://react-final-project-coderhouse.netlify.app/**
 
 # E-commerce de Gaming
 
 Este es un proyecto de E-commerce desarrollado para el curso de Coderhouse. La aplicación permite la comercialización de una variedad de elementos de gaming, como CPUs, teclados, ratones, y más.
+
+Link a pagina: **https://react-final-project-coderhouse.netlify.app/**
 
 ## Tecnologías Utilizadas
 
