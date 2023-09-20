@@ -25,22 +25,22 @@ Para comenzar a trabajar con este proyecto, asegúrate de tener Node.js y npm in
 
 1. Clona este repositorio:
 
-git clone https://github.com/leeport511/react-finalProject
+        git clone https://github.com/leeport511/react-finalProject
 
 
 2. Navega al directorio del proyecto:
 
-cd tu-proyecto
+        cd tu-proyecto
 
 3. Instala las dependencias:
 
-npm install
+        npm install
 
 4. Configura las credenciales de Firebase en un archivo `.env` siguiendo las instrucciones proporcionadas en la documentación de Firebase.
 
 5. Inicia la aplicación:
 
-npm run dev
+        npm run dev
 
 ## Uso
 
@@ -54,17 +54,17 @@ Si deseas contribuir a este proyecto, por favor sigue estos pasos:
 
 2. Crea una rama para tu nueva función:
 
-git checkout -b mi-nueva-funcion
+        git checkout -b mi-nueva-funcion
 
 3. Desarrolla y prueba tu función.
 
 4. Haz commit de tus cambios:
 
-git commit -m "Añadida mi nueva función"
+        git commit -m "Añadida mi nueva función"
 
 5. Haz push de tus cambios a tu repositorio fork:
 
-git push origin mi-nueva-funcion
+        git push origin mi-nueva-funcion
 
 6. Crea un pull request en el repositorio original.
 
