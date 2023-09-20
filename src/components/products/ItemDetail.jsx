@@ -18,7 +18,7 @@ const ItemDetail = ({
 }) => {
     const [newStock, setNewStock] = useState(stock);
     const [itemAdded, setItemAdded] = useState(false);
-    const { cart, addToCart } = useCart();
+    const { addToCart } = useCart();
 
     const onAdd = (quantity) => {
         setNewStock(newStock - quantity);
@@ -30,8 +30,6 @@ const ItemDetail = ({
     };
 
    
-
-    // TODO : hay que mantener el stock actualizado (uso localStorage? o mejor espero a FireBase? :) )
 
     return (
         <div className="backgroundSVG flex flex-col w-[450px] px-4 py-6 rounded-2xl justify-center items-center border-2 border-ligthOrange bg-[url(../../assets/images/backgroud.svg)]">

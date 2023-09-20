@@ -234,39 +234,39 @@ const products = [
 
 
 
-export const getProducts = () => {
-    return new Promise (resolve => {
-        setTimeout(() => {
-            resolve(products)
-        }, 2000);
-    })
+// export const getProducts = () => {
+//     return new Promise (resolve => {
+//         setTimeout(() => {
+//             resolve(products)
+//         }, 2000);
+//     })
 
-}
+// }
 
-export const getItem = (itemId) => {
-    return new Promise ((resolve, reject) => {
-        setTimeout(() => {
-            let item = products.find(product => product.id === itemId)
+// export const getItem = (itemId) => {
+//     return new Promise ((resolve, reject) => {
+//         setTimeout(() => {
+//             let item = products.find(product => product.id === itemId)
 
-            item ?
-            resolve(item)
-            :
-            reject(new Error(`Cound't find ${itemId}`))
-        },1500)
-    })
-}
-
-
-export const getProductsByCategory = (categoryId) => {
-    return new Promise ((resolve, reject) => {
-        setTimeout(() => {
-            let itemsByCategory = products.filter(product => product.category === categoryId)
+//             item ?
+//             resolve(item)
+//             :
+//             reject(new Error(`Cound't find ${itemId}`))
+//         },1500)
+//     })
+// }
 
 
-            itemsByCategory ?
-            resolve(itemsByCategory)
-            :
-            reject(new Error(`Cound't find ${categoryId}`))
-        },1500)
-    })
-}
+// export const getProductsByCategory = (categoryId) => {
+//     return new Promise ((resolve, reject) => {
+//         setTimeout(() => {
+//             let itemsByCategory = products.filter(product => product.category === categoryId)
+
+
+//             itemsByCategory ?
+//             resolve(itemsByCategory)
+//             :
+//             reject(new Error(`Cound't find ${categoryId}`))
+//         },1500)
+//     })
+// }
