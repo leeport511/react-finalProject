@@ -1,21 +1,11 @@
 import React, { useState } from "react";
 import { useCart } from "../../hooks/useCart";
 import { useForm } from "../../hooks/useForm";
-import { db } from "../../services/firebase/firebaseConfig";
-import {
-    addDoc,
-    collection,
-    documentId,
-    getDocs,
-    query,
-    serverTimestamp,
-    where,
-    writeBatch,
-} from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import Loader from "../loader/Loader";
-import Swal from "sweetalert2";
-import { Button, Divider, Input } from "@nextui-org/react";
+import { Button, Divider} from "@nextui-org/react";
+import { InputField } from "../../reusable/InputField";
+import { sendOrder } from "../../services/firebase/sendOrder";
 
 const buyerData = {
     name: "",
@@ -29,102 +19,20 @@ export const Checkout = () => {
     const { cart, totalPrice, removeCartList } = useCart();
     const { name, phone, email, onInputChange } = useForm(buyerData);
 
+
+    const sendOrderHandler = () => {
+        sendOrder(
+            setLoading,
+            cart,
+            name,
+            phone,
+            email,
+            totalPrice,
+            navigate,
+            removeCartList
+        )
+    }
     
-
-    const sendOrder = async () => {
-        try {
-            setLoading(true);
-
-            //**create a new order with buyerData from Form, items from cart, etc...
-            const newOrder = {
-                buyer: { name: name, phone: phone, email: email },
-                items: cart,
-                totalPrice,
-                date: serverTimestamp(),
-            };
-
-            //**Check stock and update if this change...
-            const batch = writeBatch(db);
-            const outOfStock = []; // if no stock, the item goes to this array
-
-            const ids = cart.map((prod) => prod.id); // get all the ids of my cart into a new array
-            console.log(ids);
-
-            //Create a reference to database, only the ids i have in the cart
-            const productsRef = query(
-                collection(db, "products"),
-                where(documentId(), "in", ids)
-            );
-
-            const { docs } = await getDocs(productsRef);
-
-            docs.forEach((doc) => {
-                const fields = doc.data();
-                const stockDatabase = fields.stock;
-
-                const productAddedToCart = cart.find(
-                    (prod) => prod.id === doc.id
-                );
-                console.log(productAddedToCart);
-
-                const prodQuantity = productAddedToCart?.quantity;
-
-                console.log(prodQuantity);
-
-                if (stockDatabase >= prodQuantity) {
-                    batch.update(doc.ref, {
-                        stock: stockDatabase - prodQuantity,
-                    });
-                } else {
-                    outOfStock.push({ id: doc.id, ...fields });
-                }
-            });
-
-            if (outOfStock.length === 0) {
-                const orderRef = collection(db, "orders"); //Create a new Ref for new Collection 'Orders'
-
-                const { id: orderId } = await addDoc(orderRef, newOrder); //Create new Collection 'Orders'
-
-                batch.commit();
-                removeCartList();
-                navigate("/products");
-                Swal.fire({
-                    icon: "success",
-                    title: `Well Done`,
-                    text: `Order ${orderId} has been generated successfully`,
-                    showConfirmButton: false,
-                    timer: 3500,
-                    toast: true,
-                    customClass: {
-                        title: "swal2-title",
-                        container: "swal2-container",
-                        popup: "swal2-popup",
-                        htmlContainer: "swal2-html-container",
-                    },
-                    footer: `<h5 className='text-center'>TOTAL TO PAY ${totalPrice}</h5>`,
-                });
-            } else {
-                Swal.fire({
-                    icon: "error",
-                    title: `Ups...`,
-                    text: `The order cannot be generated because a problems in the stock...`,
-                    showConfirmButton: false,
-                    timer: 3500,
-                    toast: true,
-                    customClass: {
-                        title: "swal2-title",
-                        container: "swal2-container",
-                        popup: "swal2-popup",
-                        htmlContainer: "swal2-html-container",
-                    },
-                });
-            }
-        } catch (err) {
-            alert("Error while data was processed");
-        } finally {
-            setLoading(false);
-        }
-    };
 
     if (loading) {
         return (
@@ -143,7 +51,7 @@ export const Checkout = () => {
                     className="flex flex-col w-[350px] flex-wrap md:flex-nowrap gap-y-4 text-greenBlue font-medium justify-center"
                 >
                     <h4 className="text-center font-montserrat uppercase font-bold text-lg tracking-wider">complete to order</h4>
-                    <Input
+                    <InputField 
                         type="text"
                         label="Name"
                         value={name}
@@ -152,15 +60,8 @@ export const Checkout = () => {
                         id="name"
                         placeholder="Enter your name"
                         isRequired
-                        variant="underlined"
-                        size="lg"
-                        classNames={{
-                            label: 'text-greenBlue text-md tracking-wide font-semibold',
-            
-                        }}
                     />
-
-                    <Input
+                    <InputField 
                         type="text"
                         label="Phone"
                         value={phone}
@@ -169,15 +70,9 @@ export const Checkout = () => {
                         id="phone"
                         placeholder="Plese enter your phone number"
                         isRequired
-                        variant="underlined"
-                        size="lg"
-                        classNames={{
-                            label: 'text-greenBlue text-md tracking-wide font-semibold',
-
-                        }}
                     />
 
-                    <Input
+                    <InputField 
                         type="email"
                         label="Email"
                         value={email}
@@ -186,15 +81,12 @@ export const Checkout = () => {
                         id="email"
                         placeholder="Enter your email address"
                         isRequired
-                        variant="underlined"
-                        size="lg"
-                        classNames={{
-                            label: 'text-greenBlue text-md tracking-wide font-semibold',
-                        }}
                     />
+
+                    
                     <Button
                         type="submit"
-                        onClick={sendOrder}
+                        onClick={sendOrderHandler}
                         className="mt-12 uppercase tracking-widest text-greenBlue bg-ligthOrangeOpacity text-lg font-semibold"
                     >
                         let's Buy it!!!
