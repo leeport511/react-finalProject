@@ -48,7 +48,7 @@ const ItemListContainer = ({ grettings }) => {
             {loading && <Loader />}
             {loading ? null : (
                 <div>
-                    <div className="flex justify-center items-center gap-x-6 my-2">
+                    <div className="flex justify-center items-center gap-x-6 my-2 animate-fade">
                        {category && <IconByCategory category={category} />} 
                         <h1 className="text-center my-12 font-montserrat font-bold tracking-wider text-greenBlue text-3xl uppercase">
                             {category ? category : grettings}

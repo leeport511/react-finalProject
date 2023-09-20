@@ -4,7 +4,7 @@ import { Divider } from "@nextui-org/react";
 
 const About = () => {
     return (
-        <section className="flex flex-col items-center font-hindMadurai home-height backgroundSVG-home px-16">
+        <section className="flex flex-col items-center font-hindMadurai home-height backgroundSVG-home px-16 animate-fade">
             <div className="mt-10">
                 <h3 className=" font-montserrat font-bold tracking-wider text-greenBlue text-3xl uppercase">
                     About Us
@@ -59,7 +59,7 @@ const About = () => {
                 </a>
             </div>
             <Divider />
-            <div className="flex mt-20 items-center gap-x-8">
+            <div className="flex mt-20 items-center gap-x-8 animate-jump-in animate-delay-700">
                 <img
                     src="../../assets/images/computadora-de-escritorio.png"
                     alt="Logo"

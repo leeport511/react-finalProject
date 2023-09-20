@@ -13,7 +13,7 @@ const CartContainer = () => {
     return (
         <>
             {cart.length !== 0 ? (
-                <section className="flex flex-col backgroundSVG-home home-height scroll-smooth overflow-auto">
+                <section className="flex flex-col backgroundSVG-home home-height scroll-smooth overflow-auto animate-fade">
                     <div className="flex justify-center items-center gap-x-6">
                         <h3 className="text-center uppercase tracking-widest text-4xl text-greenBlue font-bold my-8">
                             Shopping Cart

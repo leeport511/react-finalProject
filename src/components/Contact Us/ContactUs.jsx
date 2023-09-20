@@ -47,7 +47,7 @@ const ContactUs = () => {
 
     return (
         <>
-            <section className="backgroundSVG-home home-height flex flex-col px-16">
+            <section className="backgroundSVG-home home-height flex flex-col px-16 animate-fade">
                 <div className="text-center my-10 font-montserrat">
                     <h3 className="font-montserrat font-bold tracking-wider text-greenBlue text-3xl uppercase">contact us</h3>
                 </div>

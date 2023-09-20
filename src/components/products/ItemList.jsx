@@ -5,7 +5,7 @@ const ItemList = ({products}) => {
 
   
   return (
-    <div className="flex flex-wrap gap-7 justify-center">
+    <div className="flex flex-wrap gap-7 justify-center animate-fade">
       {
         products.map((product) =>{
           return (

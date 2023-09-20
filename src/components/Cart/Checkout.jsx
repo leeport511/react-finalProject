@@ -135,7 +135,7 @@ export const Checkout = () => {
     }
 
     return (
-        <section className="flex flex-col home-height backgroundSVG-home font-hindMadurai justify-center">
+        <section className="flex flex-col home-height backgroundSVG-home font-hindMadurai justify-center animate-fade">
 
             <div className="flex justify-evenly">
                 <form
