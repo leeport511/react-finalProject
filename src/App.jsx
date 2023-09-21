@@ -14,17 +14,14 @@ import { Checkout } from "./components/Cart/Checkout";
 
 function App() {
 
-   
   
-
     return (
-        <>
+        <div className="relative">
         <CartContextProvider>
             <BrowserRouter>
-                <div className="flex ">
-                    <SideNavBar />
+                <div className="flex relative">
+                    <SideNavBar/>
                     <div className="w-screen relative bg-whiteOrange ">
-                        
                         <Header/>
                         <Routes>
                             <Route path="/" element={<Home />}/> 
@@ -41,7 +38,7 @@ function App() {
                 </div>
             </BrowserRouter>
         </CartContextProvider>
-        </>
+        </div>
     );
 }
 

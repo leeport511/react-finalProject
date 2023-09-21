@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const CategoryNavList = () => {
     return (
-        <div className="flex flex-col text-whiteOrange text-lg tracking-wide mb-1 leading-9 font-normal text-center">
+        <div className="flex flex-col text-whiteOrange text-sm xl:text-lg tracking-wide mb-1 leading-9 font-normal text-center">
             <NavLink
                 className=" hover:bg-ligthOrangeOpacity hover:rounded-lg p-1"
                 to={`/products/Keyboards`}
