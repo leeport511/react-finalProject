@@ -4,8 +4,6 @@ import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import Loader from "../loader/Loader";
 import IconByCategory from "./IconByCategory";
-import { db } from "../../services/firebase/firebaseConfig";
-import { collection, getDocs, query, where } from "firebase/firestore";
 import { getProducts } from "../../services/firebase/products";
 
 
@@ -38,9 +36,9 @@ const ItemListContainer = ({ grettings }) => {
             {loading && <Loader />}
             {loading ? null : (
                 <div>
-                    <div className="flex justify-center items-center gap-x-6 my-2 animate-fade">
+                    <div className="flex justify-center items-center gap-x-3 xl:gap-x-6 my-2 animate-fade">
                        {category && <IconByCategory category={category} />} 
-                        <h1 className="text-center my-12 font-montserrat font-bold tracking-wider text-greenBlue text-3xl uppercase">
+                        <h1 className="text-center my-8 xl:my-12 font-montserrat font-bold tracking-wider text-greenBlue text-2xl uppercase xl:text-3xl ">
                             {category ? category : grettings}
                         </h1>
                         {category && <IconByCategory category={category} />} 

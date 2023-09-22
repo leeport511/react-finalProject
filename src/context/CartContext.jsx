@@ -12,7 +12,7 @@ const CartContextProvider = ({ children }) => {
             setCart((prev) => [...prev, itemToAdd]);
 
             toast.success("Product in Shopping Cart!", {
-                position: "bottom-right",
+                position: "top-right",
                 autoClose: 2500,
                 hideProgressBar: true,
                 closeOnClick: false,

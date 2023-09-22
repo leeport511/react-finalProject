@@ -12,16 +12,16 @@ const ItemCount = ({ stock, onAdd }) => {
             <div className="flex justify-center items-center text-3xl mb-3 text-greenBlue">
                 <button
                     onClick={decrementCounter}
-                    className={`w-9 ${
+                    className={`w-7 xl:w-9 ${
                         buttonState.minusClick && "scale-75 duration-200"
                     }`}
                 >
                     <img src="../../assets/images/menos.svg" alt="resta" />
                 </button>
-                <h5 className="text-4xl text-center  mx-16">{quantity}</h5>
+                <h5 className="text-2xl xl:text-4xl text-center  mx-16">{quantity}</h5>
                 <button
                     onClick={() => incrementCounter(stock)}
-                    className={`w-9 ${
+                    className={`w-7 xl:w-9 ${
                         buttonState.plusClick && "scale-75 duration-200"
                     }`}
                 >

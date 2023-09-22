@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useCart } from "../../hooks/useCart";
 import { useForm } from "../../hooks/useForm";
 import { useNavigate } from "react-router-dom";
@@ -18,6 +18,25 @@ export const Checkout = () => {
     const navigate = useNavigate();
     const { cart, totalPrice, removeCartList } = useCart();
     const { name, phone, email, onInputChange } = useForm(buyerData);
+    const [layout, setLayout] = useState("xl");
+
+    useEffect(() => {
+        
+        const handleResize = () => {
+          if (window.innerWidth < 1280) {
+            setLayout("flex");
+          } else {
+            setLayout("xl");
+          }
+        };
+
+        window.addEventListener("resize", handleResize);
+        handleResize(); 
+
+        return () => {
+          window.removeEventListener("resize", handleResize);
+        };
+      }, []);
 
 
     const sendOrderHandler = () => {
@@ -45,10 +64,10 @@ export const Checkout = () => {
     return (
         <section className="flex flex-col home-height backgroundSVG-home font-hindMadurai justify-center animate-fade">
 
-            <div className="flex justify-evenly">
+            <div className="flex flex-col items-center  xl:items-start xl:flex-row xl:justify-evenly">
                 <form
                     onSubmit={(e) => e.preventDefault()}
-                    className="flex flex-col w-[350px] flex-wrap md:flex-nowrap gap-y-4 text-greenBlue font-medium justify-center"
+                    className="flex flex-col w-[300px] xl:w-[350px] flex-wrap mb-10 xl:mb-0 md:flex-nowrap gap-y-4 text-greenBlue font-medium justify-center"
                 >
                     <h4 className="text-center font-montserrat uppercase font-bold text-lg tracking-wider">complete to order</h4>
                     <InputField 
@@ -92,8 +111,8 @@ export const Checkout = () => {
                         let's Buy it!!!
                     </Button>
                 </form>
-                <Divider orientation="vertical"/>
-                <article>
+                <Divider orientation={layout === 'xl' ? 'vertical' : 'horizontal'}/>
+                <article className="mt-10 xl:mt-0">
                     <h3 className="text-center font-bold uppercase font-montserrat mb-6 text-greenBlue tracking-wider text-xl">purchase order</h3>
                     <div>
                         {

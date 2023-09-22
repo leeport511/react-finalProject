@@ -27,11 +27,11 @@ const ItemDetailContainer = () => {
     }, []);
 
     return (
-        <div className="flex flex-col animate-fade">
+        <div className="flex flex-col animate-fade h-fit xl:h-fit ">
             {loading ? (
                 <Loader />
             ) : (
-                <div className="flex justify-center items-center  mt-6 animate-fade">
+                <div className="flex justify-center items-center mt-3 xl:mt-6 animate-fade">
                     <ItemDetail {...item} />
                 </div>
             )}

@@ -21,7 +21,19 @@
 }
 
 .home-height {
-    height: calc(100vh - 120px);
+    height: calc(100vh - 11vh);
+}
+
+.shadow-menuButton {
+    filter: drop-shadow(0px 0px 6px #e57c23);
+}
+
+.shadow-menuButton:hover {
+    filter: drop-shadow(0px 0px 4px #e57c23);
+}
+
+.shadow-Logo {
+    filter: drop-shadow(0px 0px 3px #E8AA42);
 }
 
 /* Toastify React Style */

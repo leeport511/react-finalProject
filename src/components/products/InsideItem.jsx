@@ -8,9 +8,9 @@ const InsideItem = ({name, price, id, image}) => {
     }
 
     return (
-        <div className="border-2 border-orange rounded-3xl py-4 px-6 flex flex-col w-[350px] justify-between backgroundSVG">
+        <div className="border-2 border-orange rounded-3xl py-3 px-5 xl:py-4 xl:px-6 flex flex-col w-[300px] xl:w-[350px] justify-between backgroundSVG">
             <div>
-                <div className="rounded-2xl border border-greenBlue w-[290px] h-80 m-auto">
+                <div className="rounded-2xl border border-greenBlue w-[250px] xl:w-[290px] h-72 xl:h-80 m-auto">
                     <img
                         src={`../../assets/images/products-images/${image}`}
                         alt={name}

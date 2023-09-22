@@ -47,14 +47,14 @@ const ContactUs = () => {
 
     return (
         <>
-            <section className="backgroundSVG-home home-height flex flex-col px-16 animate-fade">
+            <section className="backgroundSVG-home home-height flex flex-col items-center xl:items-stretch xl:px-16 animate-fade">
                 <div className="text-center my-10 font-montserrat">
-                    <h3 className="font-montserrat font-bold tracking-wider text-greenBlue text-3xl uppercase">contact us</h3>
+                    <h3 className="font-montserrat font-bold tracking-wider text-greenBlue text-2xl xl:text-3xl uppercase">contact us</h3>
                 </div>
                 <div className="flex flex-col items-center font-hindMadurai">
                     <form
                         onSubmit={handleSubmit}
-                        className="flex flex-col gap-4 w-[60%] text-greenBlue items-center"
+                        className="flex flex-col gap-4 xl:w-[60%] text-greenBlue items-center"
                     >
                         <Input
                             label="Name"
@@ -112,7 +112,7 @@ const ContactUs = () => {
                             onChange={onInputChange}
                             maxRows={5}
                         />
-                        <Button type="submit" className="mt-10 capitalize tracking-widest text-greenBlue bg-ligthOrangeOpacity text-lg font-semibold w-96">Send It</Button>
+                        <Button type="submit" className="mt-10 capitalize tracking-widest text-greenBlue bg-ligthOrangeOpacity text-lg font-semibold w-64 xl:w-96">Send It</Button>
                     </form>
                 </div>
             </section>

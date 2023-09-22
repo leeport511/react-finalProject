@@ -29,12 +29,10 @@ const ItemDetail = ({
         addToCart(itemToAdd);
     };
 
-   
-
     return (
-        <div className="backgroundSVG flex flex-col w-[450px] px-4 py-6 rounded-2xl justify-center items-center border-2 border-ligthOrange bg-[url(../../assets/images/backgroud.svg)]">
-            <div className="px-4">
-                <div className="w-[400px] h-[320px] m-auto">
+        <div className="backgroundSVG flex flex-col w-[320px] px-2 py-3 my-6 xl:mt-0 xl:w-[450px] xl:px-4 xl:py-6 rounded-2xl justify-center items-center border-2 border-ligthOrange bg-[url(../../assets/images/backgroud.svg)]">
+            <div className="px-2 xl:px-4">
+                <div className="w-[220px] h-[290px] xl:w-[400px] xl:h-[320px] m-auto">
                     <img
                         src={`../../assets/images/products-images/${image}`}
                         alt={name}
@@ -43,29 +41,29 @@ const ItemDetail = ({
                     <Divider className="my-2" />
                 </div>
                 <div className="mt-4 text-greenBlue font-hindMadurai">
-                    <h3 className="font-medium text-4xl mb-5 text-center">
+                    <h3 className="font-medium text-2xl xl:text-4xl mb-2 xl:mb-5 text-center">
                         {name}
                     </h3>
-                    <p className="mb-1 text-lg">
+                    <p className="mb-1 text-base xl:text-lg">
                         <strong>Brand: </strong>
                         {brand}
                     </p>
-                    <p className="mb-1 text-lg">
+                    <p className="mb-1 text-base xl:text-lg">
                         <strong>Model: </strong>
                         {model}
                     </p>
-                    <p className="mb-1 text-lg">
+                    <p className="mb-1 text-base xl:text-lg">
                         <strong>Version: </strong>
                         {version}
                     </p>
-                    <p className="mb-1 text-lg">
+                    <p className="mb-1 text-base xl:text-lg">
                         <strong>Stock: </strong>
                         {newStock}
                     </p>
                 </div>
 
-                <div className="mt-6">
-                    <h4 className="text-4xl text-greenBlue font-semibold mb-5">
+                <div className="xl:mt-6 mt-3">
+                    <h4 className="xl:text-4xl text-3xl text-greenBlue font-semibold mb-5">
                         ${price}
                     </h4>
                 </div>
@@ -82,7 +80,7 @@ const ItemDetail = ({
                     </div>
                 )}
                 <ToastContainer
-                    position="bottom-right"
+                    position="top-right"
                     autoClose={2500}
                     hideProgressBar
                     newestOnTop={false}
