@@ -27,7 +27,7 @@ const ItemDetailContainer = () => {
     }, []);
 
     return (
-        <div className="flex flex-col animate-fade h-fit xl:h-fit ">
+        <div className="flex flex-col scroll-smooth overflow-auto h-[89vh] animate-fade  xl:h-fit ">
             {loading ? (
                 <Loader />
             ) : (
