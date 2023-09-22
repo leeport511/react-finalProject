@@ -19,6 +19,8 @@ Link a pagina: **https://react-final-project-coderhouse.netlify.app/**
 
 - **React-Toastify**: React-Toastify es otra librería que hemos utilizado para mostrar notificaciones emergentes al usuario de manera efectiva.
 
+- **NextUi**: Una libreria de componentes que use para hacer los buttons, badges, etc...
+
 ## Instalación
 
 Para comenzar a trabajar con este proyecto, asegúrate de tener Node.js y npm instalados en tu máquina. Luego, sigue estos pasos:
