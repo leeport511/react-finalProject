@@ -17,7 +17,7 @@ const About = () => {
                         "This is a fictitious company that was established in
                         mid-2023 with the purpose of creating a fake e-commerce
                         website to learn and practice everything about the{" "}
-                        <b>REACT</b> framework. I would like to express our
+                        <b>REACT</b> library. I would like to express our
                         gratitude to Professor <b>Sebas Zuviria</b> and{" "}
                         <b>Sofia Luciuk</b> for making this project possible. I
                         have learned a lot."

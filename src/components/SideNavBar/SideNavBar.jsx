@@ -52,12 +52,14 @@ const SideNavBar = () => {
                             >
                                 Products
                             </NavLink>
+
+                            {/* //TODO: change direction of the arrow. */}
                             {
                                 displayCategories 
                                 ?
-                                <img className="w-4 xl:w-6 rotate-180 cursor-pointer  duration-250 ease-in-out" onClick={toogleDisplay} src="../../assets/images/Arrow-up.svg" alt="Arrow Up" />
+                                <img className="w-4 xl:w-6  cursor-pointer transition-all unset duration-250 ease-in-out" onClick={toogleDisplay} src="../../assets/images/Arrow-up.svg" alt="Arrow Up" />
                                 :
-                                <img className="w-4 xl:w-6 cursor-pointer  duration-250  ease-in-out" onClick={toogleDisplay} src="../../assets/images/Arrow-up.svg" alt="Arrow Up" />
+                                <img className="w-4 xl:w-6 cursor-pointer rotate-180 duration-250 transition-all unset ease-in-out" onClick={toogleDisplay} src="../../assets/images/Arrow-up.svg" alt="Arrow Up" />
                             }
                         </div>
                             {
