@@ -1,6 +1,7 @@
 import { Button, Input, Textarea } from "@nextui-org/react";
 import { useForm } from "../../hooks/useForm";
 import Swal from "sweetalert2";
+import { validateEmail, validateName, validateSubject, validateDescription } from "../../reusable/validForm";
 
 const initialValues = {
     name: "",
@@ -69,6 +70,8 @@ const ContactUs = () => {
                             }}
                             value={name}
                             onChange={onInputChange}
+                            isInvalid={!validateName(name)}
+                            color={!validateName(name) ? 'danger' : 'success'}
                         />
                         <Input
                             label="Subject"
@@ -83,6 +86,8 @@ const ContactUs = () => {
                             }}
                             value={subject}
                             onChange={onInputChange}
+                            isInvalid={!validateSubject(subject)}
+                            color={!validateSubject(subject) ? 'danger' : 'success'}
                         />
                         <Input
                             label="Email"
@@ -97,6 +102,10 @@ const ContactUs = () => {
                             }}
                             value={email}
                             onChange={onInputChange}
+                            isInvalid= {!validateEmail(email)}
+                            color={!validateEmail(email) ? "danger" : "success"}
+                            errorMessage={!validateEmail(email) && "Please enter a valid email"}
+                            
                         />
                         <Textarea
                             label="Message"
@@ -111,6 +120,9 @@ const ContactUs = () => {
                             value={description}
                             onChange={onInputChange}
                             maxRows={5}
+                            isInvalid= {!validateDescription(description)}
+                            color={!validateDescription(description) ? "danger" : "success"}
+                            errorMessage={!validateDescription(description) && "Please type more than 50 characters"}
                         />
                         <Button type="submit" className="mt-10 capitalize tracking-widest text-greenBlue bg-ligthOrangeOpacity text-lg font-semibold w-64 xl:w-96">Send It</Button>
                     </form>

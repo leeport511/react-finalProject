@@ -9,6 +9,9 @@ export const InputField = ({
     id,
     placeholder,
     isRequired,
+    isInvalid,
+    color,
+    errorMessage
   }) => {
     return (
       <Input
@@ -20,6 +23,9 @@ export const InputField = ({
         id={id}
         placeholder={placeholder}
         isRequired={isRequired}
+        isInvalid={isInvalid}
+        color={color}
+        errorMessage={errorMessage}
         variant="underlined"
         size="lg"
         classNames={{

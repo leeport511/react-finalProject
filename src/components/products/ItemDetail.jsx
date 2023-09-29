@@ -81,7 +81,7 @@ const ItemDetail = ({
                 )}
                 <ToastContainer
                     position="top-right"
-                    autoClose={2500}
+                    autoClose={1500}
                     hideProgressBar
                     newestOnTop={false}
                     rtl={false}

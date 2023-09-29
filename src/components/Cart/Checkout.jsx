@@ -6,6 +6,7 @@ import Loader from "../loader/Loader";
 import { Button, Divider} from "@nextui-org/react";
 import { InputField } from "../../reusable/InputField";
 import { sendOrder } from "../../services/firebase/sendOrder";
+import { validateEmail, validateName, validatePhone } from "../../reusable/validForm";
 
 const buyerData = {
     name: "",
@@ -50,8 +51,9 @@ export const Checkout = () => {
             navigate,
             removeCartList
         )
+
     }
-    
+
 
     if (loading) {
         return (
@@ -79,6 +81,8 @@ export const Checkout = () => {
                         id="name"
                         placeholder="Enter your name"
                         isRequired
+                        isInvalid={!validateName(name)}
+                        color={!validateName(name) ? 'danger' : 'success'}
                     />
                     <InputField 
                         type="text"
@@ -89,6 +93,8 @@ export const Checkout = () => {
                         id="phone"
                         placeholder="Plese enter your phone number"
                         isRequired
+                        isInvalid= {!validatePhone(phone)}
+                        color={!validatePhone(phone) ? "danger" : "success"}
                     />
 
                     <InputField 
@@ -100,6 +106,9 @@ export const Checkout = () => {
                         id="email"
                         placeholder="Enter your email address"
                         isRequired
+                        isInvalid= {!validateEmail(email)}
+                        color={!validateEmail(email) ? "danger" : "success"}
+                        errorMessage={!validateEmail(email) && "Please enter a valid email"}
                     />
 
                     
@@ -113,21 +122,21 @@ export const Checkout = () => {
                 </form>
                 <Divider orientation={layout === 'xl' ? 'vertical' : 'horizontal'}/>
                 <article className="mt-10 xl:mt-0">
-                    <h3 className="text-center font-bold uppercase font-montserrat mb-6 text-greenBlue tracking-wider text-xl">purchase order</h3>
+                    <h3 className="text-center font-bold uppercase font-montserrat mb-6 text-greenBlue tracking-wider text-lg xl:text-xl">purchase order</h3>
                     <div>
                         {
                             cart.map(({id, name, price, quantity}) => {
                                 return (
-                                    <div key={id} className='my-2 text-greenBlue font-normal border-b-3 border-ligthOrangeOpacity px-4 py-2'>
-                                        <h5 className='text-lg font-semibold'>{name}</h5>
-                                        <p>Price: ${price}</p>
-                                        <p>Quantity:{quantity}</p>
+                                    <div key={id} className='my-2 text-greenBlue font-normal border-b-2 xl:border-b-3 border-ligthOrangeOpacity px-4 py-2'>
+                                        <h5 className='text-base xl:text-lg font-semibold'>{name}</h5>
+                                        <p className="text-sm">Price: ${price}</p>
+                                        <p className="text-sm">Quantity:{quantity}</p>
                                     </div>
                                 )
                             })
                         }
                     </div>
-                    <p className="text-center text-greenBlue text-xl">
+                    <p className="text-center text-greenBlue text-lg xl:text-xl">
                         Total: <b>{totalPrice.toLocaleString("es-ar", {
                                         style: "currency",
                                         currency: "ARS",
